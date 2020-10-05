@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/hype_plugin_padding">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/hype_plugin_icon_size"
+        android:layout_height="@dimen/hype_plugin_icon_size"
+        android:contentDescription="@string/hdi_device_information_icon"
+        android:duplicateParentState="true"
+        app:srcCompat="@drawable/hdi_ic_device_information_24"
+        app:tint="@color/hype_plugin_color_selector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:text="@string/hdi_device_information_title"
+        android:textColor="@color/hype_plugin_color_selector"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@+id/icon"
+        app:layout_constraintTop_toTopOf="@+id/icon"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hdi_device_information_description"
+        android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title"/>
+
+    <TextView
+        android:id="@+id/manufacturerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hdi_manufacturer"
+        android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintStart_toStartOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/description"/>
+
+    <TextView
+        android:id="@+id/manufacturer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        tools:text="Huawei"/>
+
+    <TextView
+        android:id="@+id/modelTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hdi_model"
+        app:layout_constraintStart_toStartOf="@+id/manufacturerTitle"
+        app:layout_constraintTop_toBottomOf="@+id/manufacturerTitle"/>
+
+    <TextView
+        android:id="@+id/model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/manufacturer"
+        app:layout_constraintTop_toTopOf="@+id/modelTitle"
+        tools:text="Honor 7X"/>
+
+    <TextView
+        android:id="@+id/resolutionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hdi_resolution"
+        app:layout_constraintStart_toStartOf="@+id/modelTitle"
+        app:layout_constraintTop_toBottomOf="@+id/modelTitle"/>
+
+    <TextView
+        android:id="@+id/resolution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/model"
+        app:layout_constraintTop_toTopOf="@+id/resolutionTitle"
+        tools:text="1080x2050"/>
+
+    <TextView
+        android:id="@+id/densityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hdi_density"
+        app:layout_constraintStart_toStartOf="@+id/resolutionTitle"
+        app:layout_constraintTop_toBottomOf="@+id/resolutionTitle"/>
+
+    <TextView
+        android:id="@+id/density"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/resolution"
+        app:layout_constraintTop_toTopOf="@+id/densityTitle"
+        tools:text="440 dpi (xxhdpi)"/>
+
+    <TextView
+        android:id="@+id/androidTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hdi_android"
+        app:layout_constraintStart_toStartOf="@+id/densityTitle"
+        app:layout_constraintTop_toBottomOf="@+id/densityTitle"/>
+
+    <TextView
+        android:id="@+id/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/density"
+        app:layout_constraintTop_toTopOf="@+id/androidTitle"
+        tools:text="7.0"/>
+
+    <TextView
+        android:id="@+id/apiTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hdi_api_level"
+        app:layout_constraintStart_toStartOf="@+id/androidTitle"
+        app:layout_constraintTop_toBottomOf="@+id/androidTitle"/>
+
+    <TextView
+        android:id="@+id/api"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/android"
+        app:layout_constraintTop_toTopOf="@+id/apiTitle"
+        tools:text="24"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

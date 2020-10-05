@@ -1,0 +1,11 @@
+<resources>
+    <string name="hdi_device_information_icon">Device information icon</string>
+    <string name="hdi_device_information_description">Show device info</string>
+    <string name="hdi_device_information_title">Device Information</string>
+    <string name="hdi_manufacturer">Manufacturer</string>
+    <string name="hdi_model">Model</string>
+    <string name="hdi_resolution">Resolution</string>
+    <string name="hdi_density">Density</string>
+    <string name="hdi_android">Android</string>
+    <string name="hdi_api_level">API level</string>
+</resources>

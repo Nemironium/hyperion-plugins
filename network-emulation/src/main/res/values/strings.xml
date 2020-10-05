@@ -1,0 +1,8 @@
+<resources>
+    <string name="hne_network_emulator_title">Network Emulator</string>
+    <string name="hne_network_emulator_description">Emulate network conditions</string>
+    <string name="hne_network_emulator_icon">Network Emulator icon</string>
+    <string name="hne_internet_enabled">Internet Enabled</string>
+    <string name="hne_latency">Latency</string>
+    <string name="hne_error">Error</string>
+</resources>

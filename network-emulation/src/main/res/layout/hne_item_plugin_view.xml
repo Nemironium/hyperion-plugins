@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/hype_plugin_padding">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/hype_plugin_icon_size"
+        android:layout_height="@dimen/hype_plugin_icon_size"
+        android:backgroundTint="#8E8E93"
+        android:contentDescription="@string/hne_network_emulator_icon"
+        android:duplicateParentState="true"
+        app:srcCompat="@drawable/hne_ic_baseline_network_check_24"
+        app:tint="@color/hype_plugin_color_selector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/hne_network_emulator_title"
+        android:textColor="@color/hype_plugin_color_selector"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/icon"
+        app:layout_constraintTop_toTopOf="@+id/icon"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hne_network_emulator_description"
+        android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title"/>
+
+    <TextView
+        android:id="@+id/internetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/hne_internet_enabled"
+        android:gravity="center"
+        android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/internetEnabled"
+        app:layout_constraintStart_toStartOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/description"/>
+
+    <Switch
+        android:id="@+id/internetEnabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/internetTitle"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        tools:ignore="UseSwitchCompatOrMaterialXml"/>
+
+    <TextView
+        android:id="@+id/latencyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hne_latency"
+        app:layout_constraintStart_toStartOf="@+id/internetTitle"
+        app:layout_constraintTop_toBottomOf="@+id/internetEnabled"/>
+
+    <TextView
+        android:id="@+id/latencyRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/latencyTitle"
+        app:layout_constraintTop_toTopOf="@+id/latencyTitle"
+        tools:text="0.5s"/>
+
+    <SeekBar
+        android:id="@+id/latencySeek"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/internetTitle"
+        app:layout_constraintTop_toTopOf="@+id/latencyTitle"/>
+
+    <TextView
+        android:id="@+id/errorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hne_error"
+        app:layout_constraintStart_toStartOf="@+id/latencyTitle"
+        app:layout_constraintTop_toBottomOf="@+id/latencyTitle"/>
+
+    <TextView
+        android:id="@+id/errorRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/latencyRate"
+        app:layout_constraintTop_toTopOf="@+id/errorTitle"
+        tools:text="100%"/>
+
+    <SeekBar
+        android:id="@+id/errorSeek"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/latencySeek"
+        app:layout_constraintStart_toStartOf="@+id/latencySeek"
+        app:layout_constraintTop_toTopOf="@+id/errorTitle"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
