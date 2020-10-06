@@ -1,7 +1,5 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
-    kotlin("kapt")
+    commonLibraryPlugins()
 }
 
 android {
@@ -11,4 +9,5 @@ android {
 
 dependencies {
     commonLibraryDependencies()
+    implementation(Libs.lynx)
 }
