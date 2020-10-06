@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdkVersion(Build.compileSdk)
     buildToolsVersion = Build.tools
 
     defaultConfig {
@@ -42,9 +42,9 @@ dependencies {
     implementation(Libs.constraintLayout)
 
     implementation(Libs.okHttp)
-    implementation(Libs.hyperionCore)
-    implementation(Libs.hyperionPlugin)
+    debugImplementation(Libs.hyperionCore)
 
-    implementation(project(":network-emulation"))
-    implementation(project(":device-information"))
+    debugImplementation(project(":network-emulation"))
+    debugImplementation(project(":device-information"))
+    debugImplementation(project(":logs"))
 }
