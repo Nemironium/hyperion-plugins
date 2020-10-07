@@ -33,12 +33,25 @@ internal class DeviceParser(context: Context) {
         else -> "unknown"
     }
 
+    private fun getVersionName(apiLevel: Int, androidName: String): String =
+        when(apiLevel) {
+            21, 22 -> "Lollipop ($androidName)"
+            23 -> "Marshmallow ($androidName)"
+            24, 25 -> "Nougat ($androidName)"
+            26, 27 -> "Oreo ($androidName)"
+            28 -> "Pie ($androidName)"
+            29, 30 -> "Android $androidName"
+            else -> "Unknown ($androidName)"
+
+        }
+
+
     operator fun invoke() = Device(
         manufacturer = Build.MANUFACTURER,
         model = DeviceName.getDeviceName(),
         resolution = "${metrics.widthPixels} x ${metrics.heightPixels}",
         density = "${metrics.densityDpi} dpi ($densityBucket)",
-        androidVersion = "${Build.VERSION.CODENAME} (${Build.VERSION.RELEASE})",
+        androidVersion = getVersionName(Build.VERSION.SDK_INT, Build.VERSION.RELEASE),
         apiVersion = "${Build.VERSION.SDK_INT}",
     )
 }
