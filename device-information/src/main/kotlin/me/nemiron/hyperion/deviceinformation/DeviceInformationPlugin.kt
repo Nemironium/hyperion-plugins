@@ -6,7 +6,7 @@ import com.willowtreeapps.hyperion.plugin.v1.PluginModule
 
 @AutoService(Plugin::class)
 internal class DeviceInformationPlugin : Plugin() {
-    override fun minimumRequiredApi() = 16
+    override fun minimumRequiredApi() = 21
 
     override fun createPluginModule(): PluginModule {
         return DeviceInformationModule()
