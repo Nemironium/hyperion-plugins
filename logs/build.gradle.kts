@@ -4,10 +4,10 @@ plugins {
 
 android {
     androidLibraryConfig()
-    resourcePrefix = "hdi"
+    resourcePrefix = "hl"
 }
 
 dependencies {
     commonLibraryDependencies()
-    implementation(Libs.deviceNames)
+    implementation(Libs.lynx)
 }

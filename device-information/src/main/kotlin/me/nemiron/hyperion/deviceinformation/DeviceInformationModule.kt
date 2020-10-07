@@ -8,7 +8,7 @@ import com.willowtreeapps.hyperion.plugin.v1.PluginModule
 
 internal class DeviceInformationModule : PluginModule() {
 
-    private val device by lazy { DeviceParser(this.context)() }
+    private val device by lazy { DeviceParser(context).invoke() }
 
     override fun createPluginView(layoutInflater: LayoutInflater, parent: ViewGroup): View? {
         val rootView = layoutInflater.inflate(R.layout.hdi_item_plugin_view, parent, false)

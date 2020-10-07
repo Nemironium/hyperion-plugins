@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hl_logs_icon">Logs icon</string>
+    <string name="hl_logs_title">Logs</string>
+    <string name="hl_logs_description">View and share logs</string>
+</resources>

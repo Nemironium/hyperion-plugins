@@ -1,4 +1,0 @@
-rootProject.name = "Hyperion-Plugins"
-include ':sample'
-include ':network-emulation'
-include ':device-information'

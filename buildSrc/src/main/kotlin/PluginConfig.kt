@@ -1,6 +1,9 @@
 import com.android.build.gradle.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.kotlin.dsl.DependencyHandlerScope
+import org.gradle.kotlin.dsl.PluginDependenciesSpecScope
+import org.gradle.kotlin.dsl.kotlin
+import org.gradle.plugin.use.PluginDependenciesSpec
 
 fun LibraryExtension.androidLibraryConfig() {
     compileSdkVersion(Build.compileSdk)
@@ -39,6 +42,12 @@ fun DependencyHandlerScope.commonLibraryDependencies() {
     "implementation"(Libs.constraintLayout)
     "implementation"(Libs.hyperionPlugin)
     "kapt"(Libs.autoService)
+}
+
+fun PluginDependenciesSpec.commonLibraryPlugins() {
+    id("com.android.library")
+    kotlin("android")
+    kotlin("kapt")
 }
 
 
