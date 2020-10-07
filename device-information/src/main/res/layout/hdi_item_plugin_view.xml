@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="@dimen/hype_plugin_padding">
 
     <ImageView
@@ -20,12 +20,12 @@
 
     <TextView
         android:id="@+id/title"
-        android:text="@string/hdi_device_information_title"
-        android:textColor="@color/hype_plugin_color_selector"
-        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:text="@string/hdi_device_information_title"
+        android:textColor="@color/hype_plugin_color_selector"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/icon"
         app:layout_constraintTop_toTopOf="@+id/icon"/>
 
