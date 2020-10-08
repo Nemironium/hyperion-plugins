@@ -12,8 +12,8 @@ android {
         minSdkVersion(Build.minSdk)
         targetSdkVersion(Build.targetSdk)
         applicationId = "me.nemiron.hyperion.sample"
-        versionCode = Build.code
-        versionName = Build.name
+        versionCode = Build.versionCode
+        versionName = Build.versionName
     }
 
     buildTypes {

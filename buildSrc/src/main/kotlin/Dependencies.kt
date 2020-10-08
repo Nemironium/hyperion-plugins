@@ -3,13 +3,40 @@ object Build {
     const val compileSdk = 30
     const val targetSdk = 30
     const val minSdk = 21
-    const val code = 1 // TODO : make function for this
-    const val name = "0.1"
+    const val versionCode = 1 // TODO : make function for this
+    const val versionName = "0.1"
+    const val group = "me.nemiron.hyperion"
+    const val bintrayRepo = "Hyperion-Plugins"
+    const val licenseName = "The MIT License"
+    const val developer = "Nemiron"
+    const val developerEmail = "nemiron@outlook.com"
+    const val siteUrl = "https://github.com/Nemironium/hyperion-plugins"
+    const val gitUrl = "https://github.com/Nemironium/hyperion-plugins.git"
+
+    object DeviceInformation {
+        const val libraryName = "Device-Information"
+        const val libraryDescription = "Hyperion plugin for listing device information"
+        const val artifact = "device-information"
+    }
+
+    object Logs {
+        const val libraryName = "Logs"
+        const val libraryDescription = "Hyperion plugin for listing device logs"
+        const val artifact = "logs"
+    }
+
+    object NetworkEmulation {
+        const val libraryName = "Network-Emulation"
+        const val libraryDescription = "Hyperion plugin for emulating network conditions with OkHttp"
+        const val artifact = "network-emulation"
+    }
 }
 
 object PluginVersions {
     const val kotlin = "1.4.10"
     const val androidGradle = "4.2.0-alpha10"
+    const val bintrayGradle = "1.8.4"
+    const val mavenGradle = "1.4.1"
 }
 
 object Libs {

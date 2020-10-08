@@ -1,7 +1,7 @@
 import com.android.build.gradle.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.kotlin.dsl.DependencyHandlerScope
-import org.gradle.kotlin.dsl.PluginDependenciesSpecScope
+import org.gradle.kotlin.dsl.`maven-publish`
 import org.gradle.kotlin.dsl.kotlin
 import org.gradle.plugin.use.PluginDependenciesSpec
 
@@ -13,9 +13,10 @@ fun LibraryExtension.androidLibraryConfig() {
         minSdkVersion(Build.minSdk)
         targetSdkVersion(Build.targetSdk)
 
-        versionName = Build.name
-        versionCode = Build.code
+        versionName = Build.versionName
+        versionCode = Build.versionCode
     }
+
 
     buildTypes {
         named("release") {
@@ -48,6 +49,8 @@ fun PluginDependenciesSpec.commonLibraryPlugins() {
     id("com.android.library")
     kotlin("android")
     kotlin("kapt")
+    `maven-publish`
+    id("com.jfrog.bintray")
 }
 
 
