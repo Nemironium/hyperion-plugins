@@ -35,7 +35,7 @@ object Build {
 object PluginVersions {
     const val kotlin = "1.4.10"
     const val androidGradle = "4.2.0-alpha10"
-    const val bintrayGradle = "1.8.4"
+    const val bintrayGradle = "1.8.5"
     const val mavenGradle = "1.4.1"
 }
 
