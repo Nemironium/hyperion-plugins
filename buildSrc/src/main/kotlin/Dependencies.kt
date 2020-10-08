@@ -7,11 +7,14 @@ object Build {
     const val versionName = "0.1"
     const val group = "me.nemiron.hyperion"
     const val bintrayRepo = "Hyperion-Plugins"
+    const val license = "MIT"
     const val licenseName = "The MIT License"
+    const val licenseUrl = "https://opensource.org/licenses/MIT"
     const val developer = "Nemiron"
     const val developerEmail = "nemiron@outlook.com"
     const val siteUrl = "https://github.com/Nemironium/hyperion-plugins"
     const val gitUrl = "https://github.com/Nemironium/hyperion-plugins.git"
+    const val issueTrackerUrl = "https://github.com/Nemironium/hyperion-plugins/issues"
 
     object DeviceInformation {
         const val libraryName = "Device-Information"
