@@ -16,10 +16,8 @@ dependencies {
 
 publishing {
     publications {
-        create<MavenPublication>("device-information") {
-            //println("components = ${components.names}")
-            // FIXME : empty components
-            from(components["java"])
+        create<MavenPublication>(Build.DeviceInformation.libraryName) {
+            artifact("$buildDir/outputs/aar/${Build.DeviceInformation.artifact}-release.aar")
             groupId = Build.group
             artifactId = Build.DeviceInformation.artifact
             version = Build.versionName
@@ -51,7 +49,7 @@ publishing {
 bintray {
     user = gradleLocalProperties(rootDir).getProperty("bintray.user")
     key = gradleLocalProperties(rootDir).getProperty("bintray.apikey")
-    setPublications("device-information")
+    setPublications(Build.DeviceInformation.libraryName)
 
     pkg.apply {
         repo = Build.bintrayRepo
@@ -61,6 +59,7 @@ bintray {
         vcsUrl = Build.gitUrl
         issueTrackerUrl = Build.issueTrackerUrl
         setLicenses(Build.license)
+        setLabels("android", "hyperion")
         publish = true
         publicDownloadNumbers = true
 
