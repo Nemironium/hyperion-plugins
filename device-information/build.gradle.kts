@@ -14,10 +14,16 @@ dependencies {
     implementation(Libs.deviceNames)
 }
 
+val sourcesJar by tasks.creating(Jar::class) {
+    archiveClassifier.set("sources")
+    from(android.sourceSets.getByName("main").java.srcDirs)
+}
+
 publishing {
     publications {
         create<MavenPublication>(Build.DeviceInformation.libraryName) {
             artifact("$buildDir/outputs/aar/${Build.DeviceInformation.artifact}-release.aar")
+            artifact(sourcesJar)
             groupId = Build.group
             artifactId = Build.DeviceInformation.artifact
             version = Build.versionName

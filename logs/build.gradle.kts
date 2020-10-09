@@ -14,10 +14,16 @@ dependencies {
     implementation(Libs.lynx)
 }
 
+val sourcesJar by tasks.creating(Jar::class) {
+    archiveClassifier.set("sources")
+    from(android.sourceSets.getByName("main").java.srcDirs)
+}
+
 publishing {
     publications {
         create<MavenPublication>(Build.Logs.libraryName) {
             artifact("$buildDir/outputs/aar/${Build.Logs.artifact}-release.aar")
+            artifact(sourcesJar)
             groupId = Build.group
             artifactId = Build.Logs.artifact
             version = Build.versionName

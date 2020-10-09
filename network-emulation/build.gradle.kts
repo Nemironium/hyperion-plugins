@@ -12,10 +12,16 @@ dependencies {
     implementation(Libs.okHttp)
 }
 
+val sourcesJar by tasks.creating(Jar::class) {
+    archiveClassifier.set("sources")
+    from(android.sourceSets.getByName("main").java.srcDirs)
+}
+
 publishing {
     publications {
         create<MavenPublication>(Build.NetworkEmulation.libraryName) {
             artifact("$buildDir/outputs/aar/${Build.NetworkEmulation.artifact}-release.aar")
+            artifact(sourcesJar)
             groupId = Build.group
             artifactId = Build.NetworkEmulation.artifact
             version = Build.versionName
