@@ -9,6 +9,8 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:${PluginVersions.androidGradle}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${PluginVersions.kotlin}")
+        classpath("com.jfrog.bintray.gradle:gradle-bintray-plugin:${PluginVersions.bintrayGradle}")
+        classpath("com.github.dcendents:android-maven-gradle-plugin:${PluginVersions.mavenGradle}")
     }
 }
 
@@ -17,6 +19,9 @@ allprojects {
         google()
         jcenter()
     }
+
+    group = Build.group
+    version = Build.versionName
 
     tasks.withType<KotlinCompile> {
         kotlinOptions {
