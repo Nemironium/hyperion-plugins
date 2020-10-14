@@ -27,6 +27,7 @@ publishing {
             groupId = Build.group
             artifactId = Build.Logs.artifact
             version = Build.versionName
+
             pom.withXml {
                 asNode().apply {
                     appendNode("name", Build.Logs.libraryName)
@@ -45,6 +46,17 @@ publishing {
                         appendNode("connection", Build.gitUrl)
                         appendNode("developerConnection", Build.gitUrl)
                         appendNode("url", Build.siteUrl)
+                    }
+                    appendNode("dependencies").apply {
+                        configurations.implementation.allDependencies.forEach {
+                            if (it.name != "unspecified") {
+                                appendNode("dependency").apply {
+                                    appendNode("groupId", it.group)
+                                    appendNode("artifactId", it.name)
+                                    appendNode("version", it.version)
+                                }
+                            }
+                        }
                     }
                 }
             }

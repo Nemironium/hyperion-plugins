@@ -44,6 +44,17 @@ publishing {
                         appendNode("developerConnection", Build.gitUrl)
                         appendNode("url", Build.siteUrl)
                     }
+                    appendNode("dependencies").apply {
+                        configurations.implementation.allDependencies.forEach {
+                            if (it.name != "unspecified") {
+                                appendNode("dependency").apply {
+                                    appendNode("groupId", it.group)
+                                    appendNode("artifactId", it.name)
+                                    appendNode("version", it.version)
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
