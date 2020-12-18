@@ -17,18 +17,18 @@ Download via Maven:
 <dependency>
   <groupId>me.nemiron.hyperion</groupId>
   <artifactId>device-information</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle Groovy DSL:
 ```groovy
-debugImplementation 'me.nemiron.hyperion:device-information:0.1'
+debugImplementation 'me.nemiron.hyperion:device-information:0.2'
 ```
 
 or Gradle Kotlin DSL:
 ```kotlin
-debugImplementation("me.nemiron.hyperion:device-information:0.1")
+debugImplementation("me.nemiron.hyperion:device-information:0.2")
 ```
 
 # Hyperion - Network Emulation
@@ -46,18 +46,18 @@ Download via Maven:
 <dependency>
   <groupId>me.nemiron.hyperion</groupId>
   <artifactId>network-emulation</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle Groovy DSL:
 ```groovy
-debugImplementation 'me.nemiron.hyperion:network-emulation:0.1'
+debugImplementation 'me.nemiron.hyperion:network-emulation:0.2'
 ```
 
 or Gradle Kotlin DSL:
 ```kotlin
-debugImplementation("me.nemiron.hyperion:network-emulation:0.1")
+debugImplementation("me.nemiron.hyperion:network-emulation:0.2")
 ```
 
 # Hyperion - Logs
@@ -75,16 +75,16 @@ Download via Maven:
 <dependency>
   <groupId>me.nemiron.hyperion</groupId>
   <artifactId>logs</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle Groovy DSL:
 ```groovy
-debugImplementation 'me.nemiron.hyperion:logs:0.1'
+debugImplementation 'me.nemiron.hyperion:logs:0.2'
 ```
 
 or Gradle Kotlin DSL:
 ```kotlin
-debugImplementation("me.nemiron.hyperion:logs:0.1")
+debugImplementation("me.nemiron.hyperion:logs:0.2")
 ```
