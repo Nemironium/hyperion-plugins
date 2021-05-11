@@ -28,6 +28,12 @@ object Build {
         const val artifact = "logs"
     }
 
+    object Chucker {
+        const val libraryName = "Chucker"
+        const val libraryDescription = "Hyperion plugin for listing device http-logs based on Chucker plugin"
+        const val artifact = "chucker"
+    }
+
     object NetworkEmulation {
         const val libraryName = "Network-Emulation"
         const val libraryDescription = "Hyperion plugin for emulating network conditions with OkHttp"
@@ -53,6 +59,7 @@ object Libs {
     private const val appCompatVersion = "1.2.0"
     private const val materialVersion = "1.2.1"
     private const val constraintLayoutVersion = "2.0.1"
+    private const val chuckerVersion = "3.4.0"
 
 
     const val hyperionPlugin = "com.willowtreeapps.hyperion:hyperion-plugin:$hyperionVersionLib"
@@ -73,4 +80,7 @@ object Libs {
     const val material = "com.google.android.material:material:$materialVersion"
 
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+
+    const val chuckerDebug =  "com.github.chuckerteam.chucker:library:$chuckerVersion"
+    const val chuckerRelease = "com.github.chuckerteam.chucker:library-no-op:$chuckerVersion"
 }
