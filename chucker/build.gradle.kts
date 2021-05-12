@@ -22,11 +22,11 @@ val sourcesJar by tasks.creating(Jar::class) {
 
 publishing {
     publications {
-        create<MavenPublication>(Build.Logs.libraryName) {
-            artifact("$buildDir/outputs/aar/${Build.Logs.artifact}-release.aar")
+        create<MavenPublication>(Build.Chucker.libraryName) {
+            artifact("$buildDir/outputs/aar/${Build.Chucker.artifact}-release.aar")
             artifact(sourcesJar)
             groupId = Build.group
-            artifactId = Build.Logs.artifact
+            artifactId = Build.Chucker.artifact
             version = Build.versionName
 
             pom.withXml {
@@ -68,12 +68,12 @@ publishing {
 bintray {
     user = gradleLocalProperties(rootDir).getProperty("bintray.user")
     key = gradleLocalProperties(rootDir).getProperty("bintray.apikey")
-    setPublications(Build.Logs.libraryName)
+    setPublications(Build.Chucker.libraryName)
 
     pkg.apply {
         repo = Build.bintrayRepo
-        name = Build.Logs.artifact
-        description = Build.Logs.libraryDescription
+        name = Build.Chucker.artifact
+        description = Build.Chucker.libraryDescription
         websiteUrl = Build.siteUrl
         vcsUrl = Build.gitUrl
         issueTrackerUrl = Build.issueTrackerUrl
@@ -83,8 +83,8 @@ bintray {
         publicDownloadNumbers = true
 
         version.apply {
-            name = Build.Logs.libraryName
-            desc = Build.Logs.libraryDescription
+            name = Build.Chucker.libraryName
+            desc = Build.Chucker.libraryDescription
             gpg.apply {
                 sign = true
                 passphrase = gradleLocalProperties(rootDir).getProperty("bintray.gpg.password")

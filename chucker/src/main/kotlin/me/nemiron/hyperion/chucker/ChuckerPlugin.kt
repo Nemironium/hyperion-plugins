@@ -1,4 +1,4 @@
-package com.bobrusik.hyperion.chucker
+package me.nemiron.hyperion.chucker
 
 import com.google.auto.service.AutoService
 import com.willowtreeapps.hyperion.plugin.v1.Plugin

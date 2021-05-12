@@ -1,4 +1,4 @@
-package com.bobrusik.hyperion.chucker
+package me.nemiron.hyperion.chucker
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -15,6 +15,7 @@ class ChuckerModule : PluginModule() {
         rootView.findViewById<ConstraintLayout>(R.id.layout).setOnClickListener {
 
             val intent = Chucker.getLaunchIntent(context).apply {
+
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK
             }
             context.startActivity(intent)
