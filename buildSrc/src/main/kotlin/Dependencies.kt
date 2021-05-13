@@ -36,15 +36,15 @@ object Build {
 }
 
 object PluginVersions {
-    const val kotlin = "1.4.10"
-    const val androidGradle = "4.2.0-alpha10"
+    const val kotlin = "1.5.0"
+    const val androidGradle = "4.2.0"
     const val bintrayGradle = "1.8.5"
     const val mavenGradle = "1.4.1"
 }
 
 object Libs {
     private const val hyperionVersion = "0.9.27"
-    private const val hyperionVersionLib = "0.9.29"
+    private const val hyperionPluginVersion = "0.9.29"
     private const val okHttpVersion = "4.9.0"
     private const val autoServiceVersion = "1.0-rc7"
     private const val deviceNamesVersion = "2.0.0"
@@ -54,9 +54,8 @@ object Libs {
     private const val materialVersion = "1.2.1"
     private const val constraintLayoutVersion = "2.0.1"
 
-
-    const val hyperionPlugin = "com.willowtreeapps.hyperion:hyperion-plugin:$hyperionVersionLib"
     const val hyperionCore = "com.willowtreeapps.hyperion:hyperion-core:$hyperionVersion"
+    const val hyperionPlugin = "com.willowtreeapps.hyperion:hyperion-plugin:$hyperionPluginVersion"
 
     const val autoService = "com.google.auto.service:auto-service:$autoServiceVersion"
 
