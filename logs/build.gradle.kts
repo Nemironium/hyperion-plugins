@@ -1,5 +1,3 @@
-import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
-
 plugins {
     commonLibraryPlugins()
 }
@@ -59,34 +57,6 @@ publishing {
                         }
                     }
                 }
-            }
-        }
-    }
-}
-
-bintray {
-    user = gradleLocalProperties(rootDir).getProperty("bintray.user")
-    key = gradleLocalProperties(rootDir).getProperty("bintray.apikey")
-    setPublications(Build.Logs.libraryName)
-
-    pkg.apply {
-        repo = Build.bintrayRepo
-        name = Build.Logs.artifact
-        description = Build.Logs.libraryDescription
-        websiteUrl = Build.siteUrl
-        vcsUrl = Build.gitUrl
-        issueTrackerUrl = Build.issueTrackerUrl
-        setLicenses(Build.license)
-        setLabels("android", "hyperion")
-        publish = true
-        publicDownloadNumbers = true
-
-        version.apply {
-            name = Build.Logs.libraryName
-            desc = Build.Logs.libraryDescription
-            gpg.apply {
-                sign = true
-                passphrase = gradleLocalProperties(rootDir).getProperty("bintray.gpg.password")
             }
         }
     }

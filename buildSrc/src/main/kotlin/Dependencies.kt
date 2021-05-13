@@ -6,7 +6,7 @@ object Build {
     const val versionCode = 2 // TODO : make function for this
     const val versionName = "0.2"
     const val group = "me.nemiron.hyperion"
-    const val bintrayRepo = "Hyperion-Plugins"
+
     const val license = "MIT"
     const val licenseName = "The MIT License"
     const val licenseUrl = "https://opensource.org/licenses/MIT"
@@ -14,7 +14,6 @@ object Build {
     const val developerEmail = "nemiron@outlook.com"
     const val siteUrl = "https://github.com/Nemironium/hyperion-plugins"
     const val gitUrl = "https://github.com/Nemironium/hyperion-plugins.git"
-    const val issueTrackerUrl = "https://github.com/Nemironium/hyperion-plugins/issues"
 
     object DeviceInformation {
         const val libraryName = "Device-Information"
@@ -38,7 +37,6 @@ object Build {
 object PluginVersions {
     const val kotlin = "1.5.0"
     const val androidGradle = "4.2.0"
-    const val bintrayGradle = "1.8.5"
     const val mavenGradle = "1.4.1"
 }
 

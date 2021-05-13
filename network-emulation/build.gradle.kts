@@ -60,33 +60,3 @@ publishing {
         }
     }
 }
-
-bintray {
-    user = com.android.build.gradle.internal.cxx.configure.gradleLocalProperties(rootDir).getProperty("bintray.user")
-    key = com.android.build.gradle.internal.cxx.configure.gradleLocalProperties(rootDir).getProperty("bintray.apikey")
-    setPublications(Build.NetworkEmulation.libraryName)
-
-    pkg.apply {
-        repo = Build.bintrayRepo
-        name = Build.NetworkEmulation.artifact
-        description = Build.NetworkEmulation.libraryDescription
-        websiteUrl = Build.siteUrl
-        vcsUrl = Build.gitUrl
-        issueTrackerUrl = Build.issueTrackerUrl
-        setLicenses(Build.license)
-        setLabels("android", "hyperion")
-        publish = true
-        publicDownloadNumbers = true
-
-        version.apply {
-            name = Build.NetworkEmulation.libraryName
-            desc = Build.NetworkEmulation.libraryDescription
-            gpg.apply {
-                sign = true
-                passphrase = com.android.build.gradle.internal.cxx.configure.gradleLocalProperties(
-                    rootDir
-                ).getProperty("bintray.gpg.password")
-            }
-        }
-    }
-}

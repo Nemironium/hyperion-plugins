@@ -43,7 +43,6 @@ fun PluginDependenciesSpec.commonLibraryPlugins() {
     kotlin("android")
     kotlin("kapt")
     `maven-publish`
-    id("com.jfrog.bintray")
 }
 
 
