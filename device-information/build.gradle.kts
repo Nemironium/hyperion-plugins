@@ -59,15 +59,7 @@ afterEvaluate {
                     // Because is no way to insert dependencies via dsl
                     withXml {
                         asNode().appendNode("dependencies").apply {
-                            configurations.implementation.get().allDependencies.forEach {
-                                if (it.name != "unspecified") {
-                                    appendNode("dependency").apply {
-                                        appendNode("groupId", it.group)
-                                        appendNode("artifactId", it.name)
-                                        appendNode("version", it.version)
-                                    }
-                                }
-                            }
+                            configurations.implementation.get().allDependencies.forEach(::appendDependency)
                         }
                     }
                 }
