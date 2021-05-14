@@ -3,8 +3,7 @@
 [![Public Yes](https://img.shields.io/badge/Public-yes-green.svg?style=flat)]()
 
 # Hyperion - Device Information
-[![Bintray](https://api.bintray.com/packages/nemiron/Hyperion-Plugins/device-information/images/download.svg) ](https://bintray.com/nemiron/Hyperion-Plugins/device-information/_latestVersion)
-[![Maven Central](https://img.shields.io/maven-central/v/me.nemiron.hyperion/device-information.svg)](https://search.maven.org/search?q=g:me.nemiron.hyperion)
+[![Maven Central](https://img.shields.io/maven-central/v/me.nemiron.hyperion/device-information.svg)](https://search.maven.org/artifact/me.nemiron.hyperion/device-information)
 
 ## Requirements
 min SDK 21
@@ -17,23 +16,22 @@ Download via Maven:
 <dependency>
   <groupId>me.nemiron.hyperion</groupId>
   <artifactId>device-information</artifactId>
-  <version>0.2</version>
+  <version>0.3</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle Groovy DSL:
 ```groovy
-debugImplementation 'me.nemiron.hyperion:device-information:0.2'
+debugImplementation 'me.nemiron.hyperion:device-information:0.3'
 ```
 
 or Gradle Kotlin DSL:
 ```kotlin
-debugImplementation("me.nemiron.hyperion:device-information:0.2")
+debugImplementation("me.nemiron.hyperion:device-information:0.3")
 ```
 
 # Hyperion - Network Emulation
-[ ![Bintray](https://api.bintray.com/packages/nemiron/Hyperion-Plugins/network-emulation/images/download.svg) ](https://bintray.com/nemiron/Hyperion-Plugins/network-emulation/_latestVersion)
-[![Maven Central](https://img.shields.io/maven-central/v/me.nemiron.hyperion/network-emulation.svg)](https://search.maven.org/search?q=g:me.nemiron.hyperion)
+[![Maven Central](https://img.shields.io/maven-central/v/me.nemiron.hyperion/network-emulation.svg)](https://search.maven.org/artifact/me.nemiron.hyperion/network-emulation)
 
 ## Requirements
 min SDK 21
@@ -46,23 +44,22 @@ Download via Maven:
 <dependency>
   <groupId>me.nemiron.hyperion</groupId>
   <artifactId>network-emulation</artifactId>
-  <version>0.2</version>
+  <version>0.3</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle Groovy DSL:
 ```groovy
-debugImplementation 'me.nemiron.hyperion:network-emulation:0.2'
+debugImplementation 'me.nemiron.hyperion:network-emulation:0.3'
 ```
 
 or Gradle Kotlin DSL:
 ```kotlin
-debugImplementation("me.nemiron.hyperion:network-emulation:0.2")
+debugImplementation("me.nemiron.hyperion:network-emulation:0.3")
 ```
 
 # Hyperion - Logs
-[ ![Bintray](https://api.bintray.com/packages/nemiron/Hyperion-Plugins/logs/images/download.svg) ](https://bintray.com/nemiron/Hyperion-Plugins/logs/_latestVersion)
-[![Maven Central](https://img.shields.io/maven-central/v/me.nemiron.hyperion/logs.svg)](https://search.maven.org/search?q=g:me.nemiron.hyperion)
+[![Maven Central](https://img.shields.io/maven-central/v/me.nemiron.hyperion/logs.svg)](https://search.maven.org/artifact/me.nemiron.hyperion/logs)
 
 ## Requirements
 min SDK 21
@@ -75,16 +72,44 @@ Download via Maven:
 <dependency>
   <groupId>me.nemiron.hyperion</groupId>
   <artifactId>logs</artifactId>
-  <version>0.2</version>
+  <version>0.3</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle Groovy DSL:
 ```groovy
-debugImplementation 'me.nemiron.hyperion:logs:0.2'
+debugImplementation 'me.nemiron.hyperion:logs:0.3'
 ```
 
 or Gradle Kotlin DSL:
 ```kotlin
-debugImplementation("me.nemiron.hyperion:logs:0.2")
+debugImplementation("me.nemiron.hyperion:logs:0.3")
+```
+
+# Hyperion - Chucker
+[![Maven Central](https://img.shields.io/maven-central/v/me.nemiron.hyperion/chucker.svg)](https://search.maven.org/artifact/me.nemiron.hyperion/chucker)
+
+## Requirements
+min SDK 21
+
+Download
+--------
+
+Download via Maven:
+```xml
+<dependency>
+  <groupId>me.nemiron.hyperion</groupId>
+  <artifactId>chucker</artifactId>
+  <version>0.3</version>
+  <type>aar</type>
+</dependency>
+```
+or Gradle Groovy DSL:
+```groovy
+debugImplementation 'me.nemiron.hyperion:chucker:0.3'
+```
+
+or Gradle Kotlin DSL:
+```kotlin
+debugImplementation("me.nemiron.hyperion:chucker:0.3")
 ```
