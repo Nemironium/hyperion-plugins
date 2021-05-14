@@ -1,8 +1,8 @@
 import com.android.build.gradle.LibraryExtension
-import org.gradle.api.JavaVersion
 import org.gradle.kotlin.dsl.DependencyHandlerScope
 import org.gradle.kotlin.dsl.`maven-publish`
 import org.gradle.kotlin.dsl.kotlin
+import org.gradle.kotlin.dsl.signing
 import org.gradle.plugin.use.PluginDependenciesSpec
 
 fun LibraryExtension.androidLibraryConfig() {
@@ -17,7 +17,6 @@ fun LibraryExtension.androidLibraryConfig() {
         versionCode = Build.versionCode
     }
 
-
     buildTypes {
         named("release") {
             isMinifyEnabled = false
@@ -29,11 +28,6 @@ fun LibraryExtension.androidLibraryConfig() {
 
     sourceSets {
         getByName("main").java.srcDirs("src/main/java", "src/main/kotlin")
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
 
@@ -50,7 +44,5 @@ fun PluginDependenciesSpec.commonLibraryPlugins() {
     kotlin("android")
     kotlin("kapt")
     `maven-publish`
-    id("com.jfrog.bintray")
+    signing
 }
-
-
