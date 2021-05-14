@@ -2,6 +2,7 @@ import com.android.build.gradle.LibraryExtension
 import org.gradle.kotlin.dsl.DependencyHandlerScope
 import org.gradle.kotlin.dsl.`maven-publish`
 import org.gradle.kotlin.dsl.kotlin
+import org.gradle.kotlin.dsl.signing
 import org.gradle.plugin.use.PluginDependenciesSpec
 
 fun LibraryExtension.androidLibraryConfig() {
@@ -43,6 +44,5 @@ fun PluginDependenciesSpec.commonLibraryPlugins() {
     kotlin("android")
     kotlin("kapt")
     `maven-publish`
+    signing
 }
-
-

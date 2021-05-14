@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     commonLibraryPlugins()
 }
@@ -12,45 +14,58 @@ dependencies {
     implementation(Libs.deviceNames)
 }
 
-val sourcesJar by tasks.creating(Jar::class) {
-    archiveClassifier.set("sources")
-    from(android.sourceSets.getByName("main").java.srcDirs)
-}
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>(project.name) {
+                groupId = Build.group
+                artifactId = project.name
+                version = Build.versionName
 
-publishing {
-    publications {
-        create<MavenPublication>(Build.DeviceInformation.libraryName) {
-            artifact("$buildDir/outputs/aar/${Build.DeviceInformation.artifact}-release.aar")
-            artifact(sourcesJar)
-            groupId = Build.group
-            artifactId = Build.DeviceInformation.artifact
-            version = Build.versionName
-            pom.withXml {
-                asNode().apply {
-                    appendNode("name", Build.DeviceInformation.libraryName)
-                    appendNode("description", Build.DeviceInformation.libraryDescription)
-                    appendNode("url", Build.siteUrl)
-                    appendNode("licenses").appendNode("license").apply {
-                        appendNode("name", Build.licenseName)
-                        appendNode("url", Build.licenseUrl)
+                val sourcesJar by tasks.creating(Jar::class) {
+                    archiveClassifier.set("sources")
+                    from(android.sourceSets.getByName("main").java.srcDirs)
+                }
+
+                artifact(tasks["bundleReleaseAar"])
+                artifact(sourcesJar)
+
+                pom {
+                    name.set(project.name)
+                    description.set(Build.Publishing.publicationDescription)
+                    url.set(Build.Publishing.siteUrl)
+
+                    licenses {
+                        license {
+                            name.set(Build.Publishing.licenseName)
+                            url.set(Build.Publishing.licenseUrl)
+                        }
                     }
-                    appendNode("developers").appendNode("developer").apply {
-                        appendNode("id", Build.developer)
-                        appendNode("name", Build.developer)
-                        appendNode("email", Build.developerEmail)
+
+                    developers {
+                        developer {
+                            id.set(Build.Publishing.developerId)
+                            name.set(Build.Publishing.developerName)
+                            email.set(Build.Publishing.developerEmail)
+                        }
                     }
-                    appendNode("scm").apply {
-                        appendNode("connection", Build.gitUrl)
-                        appendNode("developerConnection", Build.gitUrl)
-                        appendNode("url", Build.siteUrl)
+
+                    scm {
+                        connection.set(Build.Publishing.gitUrl)
+                        developerConnection.set(Build.Publishing.gitUrl)
+                        url.set(Build.Publishing.siteUrl)
                     }
-                    appendNode("dependencies").apply {
-                        configurations.implementation.allDependencies.forEach {
-                            if (it.name != "unspecified") {
-                                appendNode("dependency").apply {
-                                    appendNode("groupId", it.group)
-                                    appendNode("artifactId", it.name)
-                                    appendNode("version", it.version)
+
+                    // Because is no way to insert dependencies via dsl
+                    withXml {
+                        asNode().appendNode("dependencies").apply {
+                            configurations.implementation.get().allDependencies.forEach {
+                                if (it.name != "unspecified") {
+                                    appendNode("dependency").apply {
+                                        appendNode("groupId", it.group)
+                                        appendNode("artifactId", it.name)
+                                        appendNode("version", it.version)
+                                    }
                                 }
                             }
                         }
@@ -58,5 +73,20 @@ publishing {
                 }
             }
         }
+        repositories {
+            maven {
+                name = "sonatype"
+                url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2")
+
+                credentials {
+                    username = gradleLocalProperties(rootDir).getProperty("ossrhUsername")
+                    password = gradleLocalProperties(rootDir).getProperty("ossrhPassword")
+                }
+            }
+        }
+    }
+
+    signing {
+        sign(publishing.publications[project.name])
     }
 }
