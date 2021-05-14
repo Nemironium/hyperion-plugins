@@ -47,4 +47,5 @@ dependencies {
     debugImplementation(project(":network-emulation"))
     debugImplementation(project(":device-information"))
     debugImplementation(project(":logs"))
+    debugImplementation(project(":chucker"))
 }
