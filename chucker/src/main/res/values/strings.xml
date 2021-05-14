@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hch_chucker_icon">Chucker icon</string>
+    <string name="hch_chucker_title">Chucker Logs</string>
+    <string name="hch_chucker_description">View and share http-logs</string>
+</resources>
