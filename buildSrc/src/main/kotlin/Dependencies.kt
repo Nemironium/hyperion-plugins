@@ -1,3 +1,6 @@
+import groovy.util.Node
+import org.gradle.api.artifacts.Dependency
+
 object Build {
     const val tools = "30.0.2"
     const val compileSdk = 30
@@ -58,4 +61,14 @@ object Libs {
 
     const val chuckerDebug =  "com.github.chuckerteam.chucker:library:$chuckerVersion"
     const val chuckerRelease = "com.github.chuckerteam.chucker:library-no-op:$chuckerVersion"
+}
+
+fun Node.appendDependency(dependency: Dependency) {
+    if (dependency.name != "unspecified") {
+        appendNode("dependency").apply {
+            appendNode("groupId", dependency.group)
+            appendNode("artifactId", dependency.name)
+            appendNode("version", dependency.version)
+        }
+    }
 }
