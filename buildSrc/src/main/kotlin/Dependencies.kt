@@ -3,8 +3,8 @@ object Build {
     const val compileSdk = 30
     const val targetSdk = 30
     const val minSdk = 21
-    const val versionCode = 3 // TODO : make function for this
-    const val versionName = "0.3"
+    const val versionCode = 4 // TODO : make function for this
+    const val versionName = "0.3.1"
     const val group = "me.nemiron.hyperion"
 
     object Publishing {
