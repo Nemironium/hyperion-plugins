@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     commonLibraryPlugins()
 }
@@ -77,12 +79,8 @@ afterEvaluate {
                 url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2")
 
                 credentials {
-                    username = com.android.build.gradle.internal.cxx.configure.gradleLocalProperties(
-                        rootDir
-                    ).getProperty("ossrhUsername")
-                    password = com.android.build.gradle.internal.cxx.configure.gradleLocalProperties(
-                        rootDir
-                    ).getProperty("ossrhPassword")
+                    username = gradleLocalProperties(rootDir).getProperty("ossrhUsername")
+                    password = gradleLocalProperties(rootDir).getProperty("ossrhPassword")
                 }
             }
         }

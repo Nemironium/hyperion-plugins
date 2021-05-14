@@ -80,12 +80,8 @@ afterEvaluate {
                 url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2")
 
                 credentials {
-                    username = gradleLocalProperties(
-                        rootDir
-                    ).getProperty("ossrhUsername")
-                    password = gradleLocalProperties(
-                        rootDir
-                    ).getProperty("ossrhPassword")
+                    username = gradleLocalProperties(rootDir).getProperty("ossrhUsername")
+                    password = gradleLocalProperties(rootDir).getProperty("ossrhPassword")
                 }
             }
         }
