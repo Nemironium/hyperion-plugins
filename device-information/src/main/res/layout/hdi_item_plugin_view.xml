@@ -13,10 +13,10 @@
         android:layout_height="@dimen/hype_plugin_icon_size"
         android:contentDescription="@string/hdi_device_information_icon"
         android:duplicateParentState="true"
-        app:srcCompat="@drawable/hdi_ic_device_information_24"
-        app:tint="@color/hype_plugin_color_selector"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hdi_ic_device_information_24"
+        app:tint="@color/hype_plugin_color_selector"/>
 
     <TextView
         android:id="@+id/title"
@@ -31,10 +31,11 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/hdi_device_information_description"
         android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/title"
         app:layout_constraintTop_toBottomOf="@+id/title"/>
 
@@ -45,15 +46,19 @@
         android:layout_marginTop="16dp"
         android:text="@string/hdi_manufacturer"
         android:textColor="@color/hype_plugin_color_selector"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/description"
         app:layout_constraintTop_toBottomOf="@+id/description"/>
 
     <TextView
         android:id="@+id/manufacturer"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/description"
+        android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/manufacturerTitle"
         app:layout_constraintTop_toBottomOf="@+id/description"
         tools:text="Huawei"/>
 
@@ -63,14 +68,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/hdi_model"
+        android:textColor="@color/hype_plugin_color_selector"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/manufacturerTitle"
         app:layout_constraintTop_toBottomOf="@+id/manufacturerTitle"/>
 
     <TextView
         android:id="@+id/model"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/manufacturer"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/modelTitle"
         app:layout_constraintTop_toTopOf="@+id/modelTitle"
         tools:text="Honor 7X"/>
 
@@ -80,14 +90,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/hdi_resolution"
+        android:textColor="@color/hype_plugin_color_selector"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/modelTitle"
         app:layout_constraintTop_toBottomOf="@+id/modelTitle"/>
 
     <TextView
         android:id="@+id/resolution"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/model"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/resolutionTitle"
         app:layout_constraintTop_toTopOf="@+id/resolutionTitle"
         tools:text="1080x2050"/>
 
@@ -97,14 +112,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/hdi_density"
+        android:textColor="@color/hype_plugin_color_selector"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/resolutionTitle"
         app:layout_constraintTop_toBottomOf="@+id/resolutionTitle"/>
 
     <TextView
         android:id="@+id/density"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/resolution"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/densityTitle"
         app:layout_constraintTop_toTopOf="@+id/densityTitle"
         tools:text="440 dpi (xxhdpi)"/>
 
@@ -114,6 +134,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/hdi_android"
+        android:textColor="@color/hype_plugin_color_selector"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/densityTitle"
         app:layout_constraintTop_toBottomOf="@+id/densityTitle"/>
 
@@ -121,7 +143,9 @@
         android:id="@+id/android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/density"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintStart_toEndOf="@+id/androidTitle"
         app:layout_constraintTop_toTopOf="@+id/androidTitle"
         tools:text="7.0"/>
 
@@ -131,14 +155,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/hdi_api_level"
+        android:textColor="@color/hype_plugin_color_selector"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/androidTitle"
         app:layout_constraintTop_toBottomOf="@+id/androidTitle"/>
 
     <TextView
         android:id="@+id/api"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/android"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintStart_toEndOf="@+id/apiTitle"
         app:layout_constraintTop_toTopOf="@+id/apiTitle"
         tools:text="24"/>
 

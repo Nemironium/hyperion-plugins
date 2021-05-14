@@ -5,9 +5,8 @@
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:clickable="true"
-    android:focusable="true"
-    android:padding="@dimen/hype_plugin_padding" >
+    android:background="?selectableItemBackground"
+    android:padding="@dimen/hype_plugin_padding">
 
     <ImageView
         android:id="@+id/icon"
@@ -16,10 +15,10 @@
         android:backgroundTint="#8E8E93"
         android:contentDescription="@string/hl_logs_icon"
         android:duplicateParentState="true"
-        app:srcCompat="@drawable/hl_ic_baseline_list_alt_24"
-        app:tint="@color/hype_plugin_color_selector"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hl_ic_baseline_list_alt_24"
+        app:tint="@color/hype_plugin_color_selector"/>
 
     <TextView
         android:id="@+id/title"
@@ -34,10 +33,11 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/hl_logs_description"
         android:textColor="@color/hype_plugin_color_selector"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/title"
         app:layout_constraintTop_toBottomOf="@+id/title"/>
 
