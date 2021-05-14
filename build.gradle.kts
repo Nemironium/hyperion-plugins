@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 buildscript {
     repositories {
         google()
@@ -18,6 +20,13 @@ allprojects {
 
     group = Build.group
     version = Build.versionName
+
+    ext {
+        val localProperties = gradleLocalProperties(rootDir)
+        localProperties.forEach { name, value ->
+            set(name as String, value)
+        }
+    }
 }
 
 tasks.register("clean", Delete::class) {
