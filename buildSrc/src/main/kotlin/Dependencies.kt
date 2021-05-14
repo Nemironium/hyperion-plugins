@@ -6,9 +6,9 @@ object Build {
     const val compileSdk = 30
     const val targetSdk = 30
     const val minSdk = 21
-    const val versionCode = 4 // TODO : make function for this
-    const val versionName = "0.3.1"
     const val group = "me.nemiron.hyperion"
+    const val versionName = "0.3.1"
+    val versionCode = versionName.toVersionCode()
 
     object Publishing {
         const val publicationDescription = "Set of useful Hyperion plugins"
@@ -72,3 +72,5 @@ fun Node.appendDependency(dependency: Dependency) {
         }
     }
 }
+
+private fun String.toVersionCode(): Int = this.replace(".", "").toInt()
