@@ -11,8 +11,8 @@ android {
 
 dependencies {
     commonLibraryDependencies()
-    debugImplementation(Libs.chuckerDebug)
-    releaseImplementation(Libs.chuckerRelease)
+    debugApi(Libs.chuckerDebug)
+    releaseApi(Libs.chuckerRelease)
 }
 
 afterEvaluate {

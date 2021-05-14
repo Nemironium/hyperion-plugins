@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import kotlinx.android.synthetic.main.activity_sample.*
 import me.nemiron.hyperion.networkemulation.NetworkEmulatorInterceptor
 import okhttp3.*
@@ -14,6 +15,7 @@ class SampleActivity : AppCompatActivity() {
     private val client: OkHttpClient by lazy {
         OkHttpClient.Builder()
             .addInterceptor(NetworkEmulatorInterceptor(this))
+            .addInterceptor(ChuckerInterceptor(this))
             .build()
     }
 
