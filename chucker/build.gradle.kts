@@ -61,8 +61,6 @@ afterEvaluate {
                     withXml {
                         asNode().appendNode("dependencies").apply {
                             configurations.implementation.get().allDependencies.forEach(::appendDependency)
-                            configurations.debugApi.get().allDependencies.forEach(::appendDependency)
-                            configurations.releaseApi.get().allDependencies.forEach(::appendDependency)
                         }
                     }
                 }

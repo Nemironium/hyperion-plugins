@@ -44,6 +44,9 @@ dependencies {
     implementation(Libs.okHttp)
     debugImplementation(Libs.hyperionCore)
 
+    debugImplementation(Libs.chuckerDebug)
+    releaseImplementation(Libs.chuckerRelease)
+
     debugImplementation(project(":network-emulation"))
     debugImplementation(project(":device-information"))
     debugImplementation(project(":logs"))

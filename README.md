@@ -113,3 +113,16 @@ or Gradle Kotlin DSL:
 ```kotlin
 debugImplementation("me.nemiron.hyperion:chucker:0.3.2")
 ```
+
+
+Also you need to include [Chucker](https://github.com/ChuckerTeam/chucker) debug and release dependencies:
+```groovy
+debugImplementation "com.github.chuckerteam.chucker:library:$chuckerVersion"
+releaseImplementation "com.github.chuckerteam.chucker:library-no-op:$chuckerVersion"
+```
+
+or Gradle Kotlin DSL:
+```kotlin
+debugImplementation("com.github.chuckerteam.chucker:library:$chuckerVersion")
+releaseImplementation("com.github.chuckerteam.chucker:library-no-op:$chuckerVersion")
+```
