@@ -26,8 +26,7 @@ object PluginVersions {
 }
 
 object Libs {
-    private const val hyperionVersion = "0.9.27"
-    private const val hyperionPluginVersion = "0.9.29"
+    private const val hyperionVersion = "0.9.31"
     private const val okHttpVersion = "4.9.0"
     private const val autoServiceVersion = "1.0-rc7"
     private const val deviceNamesVersion = "2.0.0"
@@ -38,7 +37,7 @@ object Libs {
     private const val constraintLayoutVersion = "2.0.1"
 
     const val hyperionCore = "com.willowtreeapps.hyperion:hyperion-core:$hyperionVersion"
-    const val hyperionPlugin = "com.willowtreeapps.hyperion:hyperion-plugin:$hyperionPluginVersion"
+    const val hyperionPlugin = "com.willowtreeapps.hyperion:hyperion-plugin:$hyperionVersion"
 
     const val autoService = "com.google.auto.service:auto-service:$autoServiceVersion"
 
