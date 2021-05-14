@@ -1,11 +1,14 @@
+import groovy.util.Node
+import org.gradle.api.artifacts.Dependency
+
 object Build {
     const val tools = "30.0.2"
     const val compileSdk = 30
     const val targetSdk = 30
     const val minSdk = 21
-    const val versionCode = 4 // TODO : make function for this
-    const val versionName = "0.3.1"
     const val group = "me.nemiron.hyperion"
+    const val versionName = "0.3.2"
+    val versionCode = versionName.toVersionCode()
 
     object Publishing {
         const val publicationDescription = "Set of useful Hyperion plugins"
@@ -59,3 +62,15 @@ object Libs {
     const val chuckerDebug =  "com.github.chuckerteam.chucker:library:$chuckerVersion"
     const val chuckerRelease = "com.github.chuckerteam.chucker:library-no-op:$chuckerVersion"
 }
+
+fun Node.appendDependency(dependency: Dependency) {
+    if (dependency.name != "unspecified") {
+        appendNode("dependency").apply {
+            appendNode("groupId", dependency.group)
+            appendNode("artifactId", dependency.name)
+            appendNode("version", dependency.version)
+        }
+    }
+}
+
+private fun String.toVersionCode(): Int = this.replace(".", "").toInt()
