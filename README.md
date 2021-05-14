@@ -16,18 +16,18 @@ Download via Maven:
 <dependency>
   <groupId>me.nemiron.hyperion</groupId>
   <artifactId>device-information</artifactId>
-  <version>0.3.2</version>
+  <version>0.3.3</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle Groovy DSL:
 ```groovy
-debugImplementation 'me.nemiron.hyperion:device-information:0.3.2'
+debugImplementation 'me.nemiron.hyperion:device-information:0.3.3'
 ```
 
 or Gradle Kotlin DSL:
 ```kotlin
-debugImplementation("me.nemiron.hyperion:device-information:0.3.2")
+debugImplementation("me.nemiron.hyperion:device-information:0.3.3")
 ```
 
 # Hyperion - Network Emulation
@@ -44,18 +44,18 @@ Download via Maven:
 <dependency>
   <groupId>me.nemiron.hyperion</groupId>
   <artifactId>network-emulation</artifactId>
-  <version>0.3.2</version>
+  <version>0.3.3</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle Groovy DSL:
 ```groovy
-debugImplementation 'me.nemiron.hyperion:network-emulation:0.3.2'
+debugImplementation 'me.nemiron.hyperion:network-emulation:0.3.3'
 ```
 
 or Gradle Kotlin DSL:
 ```kotlin
-debugImplementation("me.nemiron.hyperion:network-emulation:0.3.2")
+debugImplementation("me.nemiron.hyperion:network-emulation:0.3.3")
 ```
 
 # Hyperion - Logs
@@ -72,18 +72,18 @@ Download via Maven:
 <dependency>
   <groupId>me.nemiron.hyperion</groupId>
   <artifactId>logs</artifactId>
-  <version>0.3.2</version>
+  <version>0.3.3</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle Groovy DSL:
 ```groovy
-debugImplementation 'me.nemiron.hyperion:logs:0.3.2'
+debugImplementation 'me.nemiron.hyperion:logs:0.3.3'
 ```
 
 or Gradle Kotlin DSL:
 ```kotlin
-debugImplementation("me.nemiron.hyperion:logs:0.3.2")
+debugImplementation("me.nemiron.hyperion:logs:0.3.3")
 ```
 
 # Hyperion - Chucker
@@ -100,18 +100,18 @@ Download via Maven:
 <dependency>
   <groupId>me.nemiron.hyperion</groupId>
   <artifactId>chucker</artifactId>
-  <version>0.3.2</version>
+  <version>0.3.3</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle Groovy DSL:
 ```groovy
-debugImplementation 'me.nemiron.hyperion:chucker:0.3.2'
+debugImplementation 'me.nemiron.hyperion:chucker:0.3.3'
 ```
 
 or Gradle Kotlin DSL:
 ```kotlin
-debugImplementation("me.nemiron.hyperion:chucker:0.3.2")
+debugImplementation("me.nemiron.hyperion:chucker:0.3.3")
 ```
 
 

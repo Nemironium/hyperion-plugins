@@ -7,7 +7,7 @@ object Build {
     const val targetSdk = 30
     const val minSdk = 21
     const val group = "me.nemiron.hyperion"
-    const val versionName = "0.3.2"
+    const val versionName = "0.3.3"
     val versionCode = versionName.toVersionCode()
 
     object Publishing {
